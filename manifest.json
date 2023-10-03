@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Estensione Cambia ColoreBETA",
+  "version": "1.0",
+  "description": "THIS EXTENSION IS FOR BETA TESTING Cambia il colore del bordo della pagina se trova la parola 'RAL relativa all'esperienza'",
+  "permissions": ["tabs"],
+  "host_permissions": ["*://*/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Cambia colore"
+  },
+  "icons": {
+    "16": "logo/logo-16.png",
+    "48": "logo/logo-48.png",
+    "128": "logo/logo-128.png"
+  },
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
