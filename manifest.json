@@ -1,13 +1,13 @@
 {
   "manifest_version": 3,
-  "name": "Estensione Cambia ColoreBETA",
+  "name": "RAL Commisurata all'Estensione",
   "version": "1.0",
-  "description": "THIS EXTENSION IS FOR BETA TESTING Cambia il colore del bordo della pagina se trova la parola 'RAL relativa all'esperienza'",
-  "permissions": ["tabs"],
+  "description": "Cerca delle red flag negli annunci di lavoro",
+  "permissions": [],
   "host_permissions": ["*://*/*"],
   "action": {
     "default_popup": "popup.html",
-    "default_title": "Cambia colore"
+    "default_title": "Nothing to see here"
   },
   "icons": {
     "16": "logo/logo-16.png",
@@ -19,7 +19,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://*/*"],
+      "matches": ["*://*/*"],
       "js": ["content.js"]
     }
   ]

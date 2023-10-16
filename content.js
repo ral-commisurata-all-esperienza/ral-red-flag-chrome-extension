@@ -1,9 +1,62 @@
-// Rileva la presenza della parola chiave "RAL relativa all'esperienza" nella pagina
-if (
-  document.body.innerText.includes("RAL commisurata all'esperienza") ||
-  document.body.innerText.includes("RAL commisurata all") ||
-  document.body.innerText.includes("Competitive salary")
-) {
-  // Cambia il colore del bordo della pagina in rosso
-  document.body.style.border = "5px solid red";
+const isLinkedin = () => {
+  if (window.location.href.includes("linkedin.com")) {
+    return true;
+  }
+  return false;
+};
+
+const f = () => {
+  const element = document.getElementById("ral-commisurata-check");
+  if (element) {
+    console.log("Removing");
+    element.parentNode.removeChild(element);
+  }
+  if (
+    document.body.innerText.includes("RAL commisurata all'esperienza") ||
+    document.body.innerText.includes("RAL commisurata") ||
+    document.body.innerText.includes("Competitive salary") ||
+    document.body.innerText.includes("commisurat") ||
+    document.body.innerText.includes("azienda leader") ||
+    document.body.innerText.includes(
+      "RAL in relazione all’esperienza effettivamente maturata",
+    )
+  ) {
+    // Cambia il colore del bordo della pagina in rosso
+    const iDiv = document.createElement("div");
+    iDiv.id = "ral-commisutata-check";
+    const icon = document.createElement("p");
+    icon.style.fontSize = "50px";
+    icon.innerHTML = "🚩";
+    iDiv.className = "block";
+    iDiv.style.position = "fixed";
+    iDiv.style.top = "20px";
+    iDiv.style.zIndex = "9999";
+    iDiv.appendChild(icon);
+    document.getElementsByTagName("body")[0].appendChild(iDiv);
+  } else {
+    const iDiv = document.createElement("div");
+    iDiv.id = "ral-commisutata-check";
+    const icon = document.createElement("p");
+    icon.style.fontSize = "50px";
+    icon.innerHTML = "✅";
+    iDiv.className = "block";
+    iDiv.style.position = "fixed";
+    iDiv.style.zIndex = "9999";
+    iDiv.style.top = "20px";
+    iDiv.appendChild(icon);
+    document.getElementsByTagName("body")[0].appendChild(iDiv);
+  }
+};
+
+if (isLinkedin()) {
+  setTimeout(f, 2000);
+} else {
+  f();
 }
+
+chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+  // listen for messages sent from background.js
+  if (request.message === "changeUrl") {
+    f();
+  }
+});
