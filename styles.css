@@ -1,0 +1,45 @@
+body {
+  font-family: Arial, sans-serif;
+  width: 300px;
+  padding: 10px;
+}
+
+h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+#keywords {
+  width: 100%;
+  height: 60px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+button {
+  width: 100%;
+  padding: 8px;
+  background-color: #0073b1;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005f8b;
+}
+
+#results {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.green-check {
+  color: green;
+  font-weight: bold;
+}
+
+.red-cross {
+  color: red;
+  font-weight: bold;
+}
