@@ -7,16 +7,33 @@
   <body>
     <h2>Ral Commisurata all'esperienza</h2>
     <h4>Misuratore di job description</h4>
-    <label for="keywords">Enter keywords or phrases:</label>
-    <textarea
-      id="keywords"
-      placeholder="e.g., JavaScript, Remote work, Full-time"
-    ></textarea>
+    <div id="keywords-container">
+      <div class="keyword-entry">
+        <input type="text" class="keyword-input" placeholder="Enter a word" />
+        <label>
+          <input type="radio" name="flag-0" value="good" checked /> Good
+        </label>
+        <label> <input type="radio" name="flag-0" value="bad" /> Bad </label>
+        <button class="remove-btn" style="display: none">Remove</button>
+      </div>
+    </div>
+    <button id="addKeywordBtn">+ Add another keyword</button>
+
     <button id="checkBtn">Check Job Description</button>
 
-    <div id="results">
-      <!-- The results will be displayed here -->
-    </div>
+    <!-- <label for="keywords">Enter keywords or phrases:</label> -->
+    <!-- <textarea -->
+    <!--   id="keywords" -->
+    <!--   placeholder="e.g., JavaScript, Remote work, Full-time" -->
+    <!-- ></textarea> -->
+    <!-- <button id="checkBtn">Check Job Description</button> -->
+    <!---->
+    <!-- Results display -->
+    <h3>Results:</h3>
+    <div id="results"></div>
+    <div id="score">Score: 0</div>
+
+    <button id="resetBtn">Reset</button>
     <script src="popup.js"></script>
   </body>
 </html>

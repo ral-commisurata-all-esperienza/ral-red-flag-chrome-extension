@@ -43,3 +43,112 @@ button:hover {
   color: red;
   font-weight: bold;
 }
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 10px;
+}
+
+.word-entry {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.word-entry input[type="text"] {
+  margin-right: 10px;
+  padding: 5px;
+}
+
+.word-entry select {
+  margin-right: 10px;
+  padding: 5px;
+}
+
+.word-entry button {
+  padding: 5px;
+}
+
+.results {
+  margin-top: 20px;
+}
+
+.result-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.result-item span {
+  margin-right: 10px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  width: 300px;
+  padding: 10px;
+}
+
+h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.keyword-entry {
+  margin-bottom: 10px;
+}
+
+.keyword-input {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+label {
+  margin-right: 10px;
+}
+
+button {
+  width: 100%;
+  padding: 8px;
+  background-color: #0073b1;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005f8b;
+}
+
+#results {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.green-check {
+  color: green;
+  font-weight: bold;
+}
+
+.red-cross {
+  color: red;
+  font-weight: bold;
+}
+
+.remove-btn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 5px;
+  display: inline-block;
+}
+
+.remove-btn:hover {
+  background-color: #d32f2f;
+}
+
+#score {
+  margin-top: 15px;
+  font-weight: bold;
+}
