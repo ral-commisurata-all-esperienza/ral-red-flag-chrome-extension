@@ -2,25 +2,27 @@
   "manifest_version": 3,
   "name": "RAL Commisurata all'Estensione",
   "version": "1.0",
-  "description": "Cerca delle red flag negli annunci di lavoro",
-  "permissions": [],
-  "host_permissions": ["*://*/*"],
+  "description": "Check if job descriptions contain user-specified keywords.",
+  "permissions": ["tabs", "scripting", "activeTab"],
   "action": {
     "default_popup": "popup.html",
-    "default_title": "Nothing to see here"
-  },
-  "icons": {
-    "16": "logo/logo-16.png",
-    "48": "logo/logo-48.png",
-    "128": "logo/logo-128.png"
-  },
-  "background": {
-    "service_worker": "service-worker.js"
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
   },
   "content_scripts": [
     {
-      "matches": ["*://*/*"],
-      "js": ["content.js"]
+      "matches": ["https://www.linkedin.com/jobs/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
     }
-  ]
+  ],
+  "host_permissions": ["https://www.linkedin.com/*"],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
 }
